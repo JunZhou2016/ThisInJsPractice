@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--<body onload="demoLoad()">-->
+<body>
+<script type="text/javascript">
+    console.log("before btn");
+</script>
+<button id="btn">firstButton</button>
+<div id="div">firstDiv</div><br>
+<!--九 内联事件-->
+<!--1 当代码被内联处理函数调用时，它的this指向监听器所在的DOM元素-->
+<!--2 当代码被包括在函数内部执行时，其this指向等同于 ****函数直接调用****的情况，
+即在非严格模式指向全局对象window， 在严格模式指向undefined-->
+<button onclick="console.log(this);">show me</button>
+<button onclick="(function() {console.log(this)})();">show inner this</button>
+<button onclick="(function() {'use strict';console.log(this)})();console.log('\n')">use strict</button>
+<script type="text/javascript">
+    console.log("after div");
+</script>
+<script type="text/javascript" src="thisDemo.js">
+</script>
+</body>
+</html>
